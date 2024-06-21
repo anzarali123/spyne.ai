@@ -22,8 +22,6 @@ export async function GET(req: NextRequest) {
       },
     });
 
-    console.log(dbResponse, "dbrepsonse");
-
     return NextResponse.json({
       success: true,
       dbResponse,
