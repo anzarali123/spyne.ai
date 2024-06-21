@@ -18,6 +18,7 @@ export const NEXT_AUTH_OPTIONS = {
           placeholder: "Enter password",
         },
       },
+      //@ts-ignore
       async authorize(credentials: any) {
         console.log(credentials, "credentials");
         const user = await prisma.user.findUnique({
