@@ -46,6 +46,7 @@ export const Home = () => {
             setVideourl={setVideourl}
           />
           <VideoPlayer
+            //@ts-ignore
             captions={videoDetails?.captions}
             loading={loading}
             src={videourl}
