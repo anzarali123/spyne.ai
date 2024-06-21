@@ -1,4 +1,3 @@
-"use client";
 import { BACKEND_URL } from "@/config";
 import { signOut, useSession } from "next-auth/react";
 import React, { useState } from "react";
@@ -45,8 +44,8 @@ const Dropdown = () => {
             </div>
 
             <div
-              onClick={async () => {
-                await signOut({ callbackUrl: `${BACKEND_URL}/signin` });
+              onClick={() => {
+                signOut();
               }}
               className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
               role="menuitem"

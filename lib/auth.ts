@@ -1,6 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/db";
 import bcrypt from "bcrypt";
+import { BACKEND_URL } from "@/config";
 
 export const NEXT_AUTH_OPTIONS = {
   providers: [
@@ -42,7 +43,7 @@ export const NEXT_AUTH_OPTIONS = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/signin",
+    signIn: `${BACKEND_URL}/signin`,
   },
   callbacks: {
     async jwt({ token, user }: any) {
