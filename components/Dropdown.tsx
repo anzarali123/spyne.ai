@@ -46,7 +46,7 @@ const Dropdown = () => {
 
             <div
               onClick={async () => {
-                await signOut({ callbackUrl: `http://loacalhost:3000/signin` });
+                await signOut({ callbackUrl: `${BACKEND_URL}/signin` });
               }}
               className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
               role="menuitem"
