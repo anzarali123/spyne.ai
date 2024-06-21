@@ -5,7 +5,6 @@ import { FormEvent, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Loader } from "./Loader";
-import { BACKEND_URL } from "@/config";
 
 const SignIn = () => {
   const router = useRouter();
@@ -27,7 +26,7 @@ const SignIn = () => {
     });
 
     if (res?.ok && res.status === 200) {
-      router.push(`${BACKEND_URL}`);
+      router.push(`/`);
     } else if (res?.error === "CredentialsSignin") {
       toast.error("Invalid username or password");
     } else {

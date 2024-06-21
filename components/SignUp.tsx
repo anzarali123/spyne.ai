@@ -33,7 +33,7 @@ const SignUp = () => {
           "You have been signed up successfully! Please signin to continue",
           { duration: 5000 }
         );
-        router.push(`${BACKEND_URL}/signin`);
+        router.push(`/signin`);
       } else {
         toast.error("User already exists!", { duration: 5000 });
       }
