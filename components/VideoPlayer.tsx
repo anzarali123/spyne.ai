@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Captions } from "./Captions";
 
 import axios from "axios";
-import { BACKEND_URL } from "@/config";
 import toast from "react-hot-toast";
 import { Caption, CaptionInput } from "@/lib/types";
 import { Loader } from "./Loader";
@@ -25,10 +24,7 @@ export const VideoPlayer = ({
     const videoid = sessionStorage.getItem("videoid");
     const payload = { videoid, ...caption };
     try {
-      const response = await axios.post(
-        `${BACKEND_URL}/api/addcaption`,
-        payload
-      );
+      const response = await axios.post(`/api/addcaption`, payload);
       if (response.data.success) {
         await fetchCaptions();
       }
@@ -40,7 +36,7 @@ export const VideoPlayer = ({
 
   const fetchCaptions = async () => {
     try {
-      const { data } = await axios.get(`${BACKEND_URL}/api/videodetails`);
+      const { data } = await axios.get(`/api/videodetails`);
       console.log(data, "response from video");
       setCaptionList(data.dbResponse.video.captions);
     } catch (error) {

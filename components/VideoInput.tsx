@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BACKEND_URL } from "@/config";
 import toast from "react-hot-toast";
 export const VideoInput = ({
   setVideourl,
@@ -22,7 +21,7 @@ export const VideoInput = ({
     setLoading(true);
     setDisabled(true);
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/addvideo`, {
+      const response = await axios.post(`/api/addvideo`, {
         videourl: inputValue,
       });
       console.log(response, "response from url");

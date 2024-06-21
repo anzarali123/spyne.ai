@@ -43,7 +43,7 @@ export const NEXT_AUTH_OPTIONS = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: `${BACKEND_URL}/signin`,
+    signIn: `/signin`,
   },
   callbacks: {
     async jwt({ token, user }: any) {

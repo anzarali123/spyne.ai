@@ -16,7 +16,7 @@ export const Home = () => {
 
   const fetchUserVideoDetails = async () => {
     try {
-      const response = await axios.get(`${BACKEND_URL}/api/videodetails`);
+      const response = await axios.get(`/api/videodetails`);
       console.log(response.data, "response from video");
       const data: Video = response.data.dbResponse.video;
       if (response.data.dbResponse && response.data.dbResponse.video) {

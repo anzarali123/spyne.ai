@@ -26,7 +26,7 @@ const SignIn = () => {
     });
 
     if (res?.ok && res.status === 200) {
-      router.push(`/`);
+      router.push("/");
     } else if (res?.error === "CredentialsSignin") {
       toast.error("Invalid username or password");
     } else {

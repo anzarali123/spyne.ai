@@ -1,7 +1,6 @@
 "use client";
 import { FormEvent, useState } from "react";
 import axios from "axios";
-import { BACKEND_URL } from "@/config";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Loader } from "./Loader";
@@ -24,10 +23,7 @@ const SignUp = () => {
     setLoading(true);
     const payload = { name, email, password };
     try {
-      const response = await axios.post(
-        `${BACKEND_URL}/api/auth/signup`,
-        payload
-      );
+      const response = await axios.post(`/api/auth/signup`, payload);
       if (response.data.success) {
         toast.success(
           "You have been signed up successfully! Please signin to continue",
