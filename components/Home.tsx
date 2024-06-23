@@ -22,6 +22,7 @@ export const Home = () => {
       if (response.data.dbResponse && response.data.dbResponse.video) {
         setVideoDetails(response.data.dbResponse.video);
         setVideourl(response.data.dbResponse.video.video);
+        sessionStorage.setItem("videoid", response.data.dbResponse.video.id);
       } else {
         setVideoDetails([]);
       }
